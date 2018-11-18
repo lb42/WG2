@@ -22,12 +22,15 @@
                     select="$pCount"/> paragraphs here.</xsl:message>
         </xsl:if>
         <xsl:variable name="context" select="//t:body"/>
-        <samples>
+        <xsl:text>
+</xsl:text>
+        <samples n="{$textID}">
             <xsl:for-each select="$randomParas">
                 <xsl:variable name="random">
                     <xsl:value-of select="."/>
                 </xsl:variable>
-                <xsl:if test="string-length($random) gt 0">
+                <xsl:if test="string-length($random) gt 0"><xsl:text>
+</xsl:text>
                     <sample>
                         <xsl:apply-templates
                             select="
